@@ -1,0 +1,64 @@
+---
+title: "01_Wojcik_Abigail_2022"
+author: "AW"
+format: html
+editor: visual
+---
+
+## Homework 1
+
+## Question 1
+
+```{r first_chunk}
+data(quakes)
+head(quakes)
+str(quakes)
+summary(quakes)
+
+```
+
+I see that there are 1000 observations entered into the data set "quakes" and 5 variables: lat, long, depth, mag, and stations. I can also see the minimums/maximums, first/third quartiles, means/medians for all of the variables.
+
+## Question 2/3
+
+```{r second_chunk}
+quakes[,"long"] #pull up column "long" in dataset "quakes"
+unq_vector <-c(5:8, 1,3,3,9, 12:4)
+unique(unq_vector)
+length(unique(quakes$stations)) #one way to do it, integer
+length(unique(quakes[["stations"]])) #another way to do it, integer
+cat("There are", length(unique(quakes$stations)), "unique stations." )
+
+
+```
+
+There are 102 unique stations.
+
+## Question 4/ "Impress Yourself"
+
+```{r third_chunk}
+range(quakes$depth) #what is the range of depths of earthquake occurrence 
+max(quakes$mag) # largest earthquake
+which(quakes == max(quakes$mag), arr.ind = TRUE) # the largest quake is at location row = 152, column = 4
+lat <- quakes$lat[152]
+long <- quakes$long[152]
+lat
+long
+cat("largest earthquake location =", lat, "latitude,", long, "longitude with magnitude", max(quakes$mag))
+```
+
+The range of depths in which earthquakes occur is 40 - 680.
+
+The largest earthquake magnitude was 6.4 at latitude -15.56 and longitude 167.62.
+
+Meta 1:
+
+This was a little hard, but I enjoyed it.
+
+Meta 2:
+
+This took me about 2 hours, most of which was the "impress yourself" question
+
+Meta 3:
+
+I would say I did a sufficient job? I guess I'll find out, won't I. I just don't feel very confident about any of my work.
